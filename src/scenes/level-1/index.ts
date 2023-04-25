@@ -2,7 +2,7 @@ import { Scene, GameObjects } from 'phaser';
 import { Player } from '../../classes/player';
 import { Goodie } from '../../classes/goodie';
 import { Karl } from '../../classes/karl';
-import { EVENTS_NAME, SPEED_MAP } from '../../utils/consts'
+import { EVENTS_NAME, SPEED_MAP, GAME_STATUS } from '../../utils/consts'
 
 export class Level1 extends Scene {
     private player!: GameObjects.Sprite;

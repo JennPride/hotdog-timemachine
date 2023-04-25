@@ -42,7 +42,11 @@ export class Player extends Actor {
     if (this.keyA?.isDown) {
       this.getBody().velocity.x = speed * -1;
       this.checkFlip();
-      this.getBody().setOffset(100,0);
+      if (this.speedAdjustment != SPEED_MAP['ice']) {
+        this.getBody().setOffset(100,0);
+      } else {
+        this.getBody().setOffset(0,0);
+      }
       !this.anims.isPlaying && this.anims.play('run', true);
     }
     if (this.keyS?.isDown) {
@@ -52,7 +56,12 @@ export class Player extends Actor {
     if (this.keyD?.isDown) {
       this.getBody().velocity.x = speed;
       this.checkFlip();
-      this.getBody().setOffset(0,0);
+      if (this.speedAdjustment != SPEED_MAP['ice']) {
+        this.getBody().setOffset(0,0);
+      } else {
+        this.getBody().setOffset(100,0);
+      }
+
       !this.anims.isPlaying && this.anims.play('run', true);
     }
     this.hpValue.setPosition(this.x, this.y - this.height * .6);

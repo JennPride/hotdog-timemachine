@@ -13,12 +13,14 @@ export class Text extends GameObjects.Text {
   }
 
   private getFontSize(sizeString: string): string {
-    if (sizeString == 'lg') {
+    if (sizeString === 'lg') {
       return 'calc(100vw / 25)'
-    } else if (sizeString == 'md') {
+    } else if (sizeString === 'md') {
       return 'calc(100vw / 40)'
-    } else if (sizeString == 'sm') {
+    } else if (sizeString === 'sm') {
       return 'calc(100vw / 60)'
+    } else if (sizeString === 'xs') {
+      return 'calc(100vw / 80)'
     }
     return 'calc(100vw / 25)'
   }
