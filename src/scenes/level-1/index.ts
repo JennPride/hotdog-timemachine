@@ -42,7 +42,7 @@ export class Level1 extends Scene {
     }
 
     private spawnKarl(width: number, height: number) {
-        const possibleDirections = ['left']
+        const possibleDirections = ['left', 'right']
         let direction = possibleDirections[Phaser.Math.Between(0, possibleDirections.length - 1)]
         let yCoord = 0
         let xCoord = 0

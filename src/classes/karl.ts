@@ -18,7 +18,8 @@ export class Karl extends Physics.Arcade.Sprite {
         }
         this.targetX = targetX
         this.targetY = targetY
-        scene.physics.moveTo(this, this.targetX, this.targetY, 100, 3000)
+        const speed = Phaser.Math.Between(50,150)
+        scene.physics.moveTo(this, this.targetX, this.targetY, speed, 3000)
         this.checkFlip()
     }
     protected getBody(): Physics.Arcade.Body {
