@@ -90,11 +90,9 @@ const config = {
     }),
   ],
   devServer: {
-    // contentBase: path.join(__dirname, 'dist'),
+    static: path.join(__dirname, 'dist'),
     port: 5000,
-    // inline: true,
     hot: true,
-    // overlay: true,
   },
 };
 module.exports = config;
