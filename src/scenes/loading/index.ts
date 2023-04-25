@@ -12,9 +12,11 @@ export class LoadingScene extends Scene {
         this.load.image('silentdisco', 'sprites/silentdisco.png')
         this.load.image('karl', 'sprites/karl-0.png')
         this.load.atlas('a-karl', 'spritesheets/karl_attack.png', 'spritesheets/karl_attack.json')
+        this.load.image('poster', 'images/poster.jpg')
     }
     create(): void {
-        this.scene.start('level-1-scene');
-        this.scene.start('overlay')
+        this.scene.start('landing')
+        // this.scene.start('level-1-scene');
+        // this.scene.start('overlay')
     }    
 }

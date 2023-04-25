@@ -1,5 +1,5 @@
 import Phaser, { Game, Types } from 'phaser';
-import { Level1, LoadingScene, Overlay } from './scenes';
+import { Level1, LoadingScene, Overlay, Landing } from './scenes';
 
 declare global {
     interface Window {
@@ -42,7 +42,7 @@ export const gameConfig: GameConfigExtended = {
     audio: {
         disableWebAudio: false,
     },
-    scene: [LoadingScene, Level1, Overlay],
+    scene: [LoadingScene, Level1, Overlay, Landing],
     winScore: 69,
 };
 
