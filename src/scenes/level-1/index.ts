@@ -60,7 +60,7 @@ export class Level1 extends Scene {
             destinationY = Phaser.Math.Between(0, height);
         } 
         let karl = new Karl(this, xCoord, yCoord, 'karl', destinationX, destinationY)
-        this.physics.add.collider(this.player, karl, (player, karl) => {
+        this.physics.add.overlap(this.player, karl, (player, karl) => {
             (player as Player).getDamage(8)
         })
         
