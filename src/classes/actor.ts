@@ -1,4 +1,6 @@
 import { Physics } from 'phaser';
+import { rainbowEffect } from '../utils/display_utils';
+
 export class Actor extends Physics.Arcade.Sprite {
     protected hp: number
     constructor(scene: Phaser.Scene, x: number, y: number, texture: string, frame?: string | number) {
@@ -19,16 +21,8 @@ export class Actor extends Physics.Arcade.Sprite {
             onComplete: () => {this.setAlpha(1);}
         });
     }
-    public getHype(): void {
-        this.scene.tweens.add({
-            targets: this,
-            duration: 100,
-            repeat: 3,
-            yoyo: true,
-            onActive: () => {
-                
-            }
-        });
+    public getHype(): void {    
+       rainbowEffect(this, 10)
     }
     public getHPValue(): number {
         return this.hp;
@@ -42,5 +36,8 @@ export class Actor extends Physics.Arcade.Sprite {
     }
     protected getBody(): Physics.Arcade.Body {
         return this.body as Physics.Arcade.Body;
+    }
+    public adjustSpeed(value: number): void {
+        // Not implemented   
     }
 }

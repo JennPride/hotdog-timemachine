@@ -1,5 +1,5 @@
 import Phaser, { Game, Types } from 'phaser';
-import { Level1, LoadingScene } from './scenes';
+import { Level1, LoadingScene, Overlay } from './scenes';
 
 declare global {
     interface Window {
@@ -8,7 +8,11 @@ declare global {
     }
 }
 
-const gameConfig: Types.Core.GameConfig = {
+type GameConfigExtended = Types.Core.GameConfig & {
+    winScore: number;
+  };
+
+export const gameConfig: GameConfigExtended = {
 	title: 'Phaser game tutorial',
     type: Phaser.WEBGL,
     parent: 'game',
@@ -21,7 +25,7 @@ const gameConfig: Types.Core.GameConfig = {
     physics: {
         default: 'arcade',
         arcade: {
-        debug: false,
+            debug: true,
         },
     },
     render: {
@@ -38,7 +42,8 @@ const gameConfig: Types.Core.GameConfig = {
     audio: {
         disableWebAudio: false,
     },
-    scene: [LoadingScene, Level1],
+    scene: [LoadingScene, Level1, Overlay],
+    winScore: 69,
 };
 
 window.sizeChanged = () => {
